@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: client-pod
+  labels: 
+    component: client
+spec: 
+  containers: 
+  - name: client
+    image: keshavcodex/form-client
+    env:
+      - name: REACT_APP_SERVER_URL
+        value: http://192.168.49.2:32111
+    ports: 
+    - containerPort: 3000
