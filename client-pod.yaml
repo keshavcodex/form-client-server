@@ -10,6 +10,7 @@ spec:
     image: keshavcodex/form-client
     env:
       - name: REACT_APP_SERVER_URL
-        value: http://192.168.49.2:32111
+        # value: http://192.168.49.2:32111
+        value: 10.99.235.196
     ports: 
     - containerPort: 3000

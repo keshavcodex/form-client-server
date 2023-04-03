@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: client-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: client
+  template:
+    metadata:
+      labels:
+        component: client
+    spec:
+      containers:
+        - name: client
+          image: keshavcodex/form-client
+          env:
+          - name: REACT_APP_SERVER_URL
+            # value: http://192.168.49.2:32111
+            value: 10.99.235.196
+          ports:
+            - containerPort: 3000
